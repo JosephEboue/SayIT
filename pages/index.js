@@ -1,16 +1,19 @@
+import { getSession, useSession } from 'next-auth/react'
+import Head from 'next/head'
+import { useContext } from 'react'
+import Feed from '../components/Feed'
 import Login from '../components/Login'
-import { useSession } from 'next-auth/react';
-import { Inter } from "next/font/google";
-import Head from 'next/head';
+import Modal from '../components/Modal'
 import Side_bar from '../components/Side_bar'
-import Feed from '@/components/Feed';
-
-const inter = Inter({ subsets: ["latin"] });
+//import Trending from "../components/Trending"
+import { AppContext } from '../contexts/AppContext'
 
 export default function Home() {
   const { data: session } = useSession() // Session creation
+  const [appContext] = useContext(AppContext)
 
   if (!session) return <Login /> // Session check
+
   return (
     <div>
       <Head>
@@ -22,10 +25,20 @@ export default function Home() {
       <main className='relative max-w-[1400px] mx-auto'>
         <Side_bar />
         <Feed />
+        {appContext?.isModalOpen && <Modal />}
         <div className='flex gap-6'>
         </div>
       </main>
 
     </div>
   );
+}
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+
+  return {
+    props: {
+      session,
+    },
+  };
 }

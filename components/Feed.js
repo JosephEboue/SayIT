@@ -3,6 +3,7 @@ import { HiOutlineSparkles } from "react-icons/hi"
 import { onSnapshot, collection, query, orderBy } from "firebase/firestore";
 import { db } from "../firebase";
 import Input from './Input'
+import Post from './Post'
 
 const Feed = () => { // Manage home page feed (flux)
 
@@ -26,6 +27,9 @@ const Feed = () => { // Manage home page feed (flux)
       </div>
 
       <Input />
+      {posts.map((post) => (
+        <Post key={post.id} id={post.id} post={post.data()} />
+      ))}
 
     </section>
   )

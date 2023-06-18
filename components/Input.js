@@ -8,13 +8,7 @@ import { useSession } from "next-auth/react";
 
 import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
-import {
-  addDoc,
-  collection,
-  doc,
-  serverTimestamp,
-  updateDoc,
-} from "firebase/firestore";
+import { addDoc, collection, doc, serverTimestamp, updateDoc,} from "firebase/firestore";
 import { db, storage } from "../firebase";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 
@@ -90,7 +84,7 @@ const Input = () => {
           <textarea
             className="w-[100%] bg-transparent outline-none text-[20px]"
             rows="2"
-            placeholder="Quoi de neuf ?"
+            placeholder="Quoi de neuf?"
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
@@ -138,7 +132,7 @@ const Input = () => {
                 disabled={!input.trim() && !selectedFile}
                 onClick={sendPost}
               >
-                Post
+                Tweet
               </button>
             </div>
           )}
