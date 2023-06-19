@@ -7,9 +7,11 @@ import { HiOutlineClipboardList, HiOutlineDotsCircleHorizontal} from "react-icon
 import Side_bar_link from "./Side_bar_link";
 import { useSession } from 'next-auth/react';
 import { signOut } from "next-auth/react";
+import Feed from "./Feed";
 
 const Side_bar = () => {
     const { data: session } = useSession() // Session creation
+
   return (
     <div className="hidden sm:flex flex-col items-center xl:items-start xl:w-[340px] p-2 fixed h-full border-r border-gray-400 pr-0 xl:pr-8">
       <div className="flex items-center justify-center w-14 h-14 hoverEffect p-0 xl:ml-24">
