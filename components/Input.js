@@ -132,7 +132,7 @@ const Input = () => {
                 disabled={!input.trim() && !selectedFile}
                 onClick={sendPost}
               >
-                Tweet
+                Post
               </button>
             </div>
           )}

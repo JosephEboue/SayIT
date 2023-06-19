@@ -66,7 +66,7 @@ const Modal = () => {
 
                         <img src={post?.image} className='mt-2 max-h-[250px] rounded-[15px] object-cover' alt="" />
 
-                        <p className='mt-4 text-gray-500'>Replying to: <span className='text-[#1d9bf0]'>@{post?.tag}</span></p>
+                        <p className='mt-4 text-gray-500'>Répondre à: <span className='text-[#1d9bf0]'>@{post?.tag}</span></p>
 
                     </div>
 
@@ -100,7 +100,7 @@ const Modal = () => {
                                 className="bg-[#1d9bf0] text-white rounded-full px-4 py-1.5 font-bold shadow-md hover:bg-[#1a8cd8] disabled:hover:bg-[#1d9bf0] disabled:opacity-50 disabled:cursor-default"
                                 disabled={!input.trim()}
                                 onClick={sendComment}>
-                                Tweet
+                                Post
                             </button>
                         </div>
 

@@ -4,6 +4,7 @@ import { FaRetweet } from "react-icons/fa"
 import { AiOutlineHeart, AiOutlineShareAlt, AiFillHeart } from 'react-icons/ai'
 import { RiDeleteBin5Line } from 'react-icons/ri'
 import Moment from 'react-moment'
+
 import { db } from "../firebase"
 import { useRouter } from 'next/router'
 import { collection, deleteDoc, doc, onSnapshot, orderBy, query, setDoc } from 'firebase/firestore'
@@ -100,7 +101,7 @@ const Post = ({ id, post }) => {
           <div className='flex justify-between text-[20px] mt-4 w-[80%]'>
 
             <div className='flex gap-1 items-center'>
-            <BsChat className='hoverEffect w-7 h-7 p-1' onClick={(e) => {
+              <BsChat className='hoverEffect w-7 h-7 p-1' onClick={(e) => {
                 e.stopPropagation()
                 openModal()
               }} />
